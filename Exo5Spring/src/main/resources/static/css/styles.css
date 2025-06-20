@@ -1,0 +1,121 @@
+:root {
+    --font-family-base: "Segoe UI", sans-serif;
+    --color-bg: #f8f9fa;
+    --color-text: #212529;
+    --color-heading: #343a40;
+    --color-accent: #17a2b8;
+    --color-hover: #ffc107;
+    --color-nav-bg: #343a40;
+    --color-button-bg: #007bff;
+    --color-button-hover: #0056b3;
+    --color-form-bg: #ffffff;
+    --color-input-border: #ced4da;
+}
+
+body {
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+h1 {
+    color: var(--color-heading);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+nav {
+    background-color: var(--color-nav-bg);
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--color-hover);
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: var(--color-form-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--color-button-bg);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-button-hover);
+}
+
+ul {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    background: var(--color-form-bg);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+li a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+li a:hover {
+    text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 package org.example.exo5spring.service;
 
 import org.example.exo5spring.dao.CartItemRepository;
+import org.example.exo5spring.dao.FurnitureRepository;
 import org.example.exo5spring.entity.CartItem;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,11 @@ import java.util.List;
 public class CartItemService {
 
 private final CartItemRepository cartItemRepository;
+private final FurnitureRepository furnitureRepository;
 
-    public CartItemService(CartItemRepository cartItemRepository) {
+    public CartItemService(CartItemRepository cartItemRepository, FurnitureRepository furnitureRepository) {
         this.cartItemRepository = cartItemRepository;
+        this.furnitureRepository = furnitureRepository;
     }
 
     public CartItem addCartItem(CartItem cartItem) {

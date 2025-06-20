@@ -1,9 +1,6 @@
 package org.example.exo5spring.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +20,9 @@ public class CartItem {
     private Long id;
 
 
-    private Long furnitureId;
+    @OneToOne
+    @JoinColumn(name = "furniture_id")
+    private Furniture furniture;
 
 
     private Long quantity;

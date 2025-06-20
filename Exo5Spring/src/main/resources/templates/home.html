@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 <h1> Welcome to the Home Page</h1>
-
-
+<th:block th:fragment="navbar">
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/list}">Furnitures</a></li>
+            <li><a th:href="@{/addFuStart}">Add a new furniture</a></li>
+            <li><a th:href="@{/showCart}">Show cart</a></li>
+        </ul>
+    </nav>
+    <h1>Home</h1>
+</th:block>
 
 
 
