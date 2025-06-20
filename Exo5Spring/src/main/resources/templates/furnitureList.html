@@ -10,9 +10,15 @@
 
 
 
-
-
-
+<h1>Furniture List</h1>
+<ul>
+    <li th:each="furniture : ${furnitures}">
+        <span th:text="${furniture.getName()} + ' - ' + ${furniture.getDescription()} + ' - ' + ${furniture.getPrice()} + ' - ' + ${furniture.getStock()}"></span>
+        <a th:href="@{/delete(id=${furniture.getId()})}">Delete furniture</a>
+        <a th:href="@{/updateFu(id=${furniture.getId()})}">Modify a furniture</a>
+        <a th:href="@{/addCa(id=${furniture.getId()})}">Add to cart</a>
+    </li>
+</ul>
 
 
 

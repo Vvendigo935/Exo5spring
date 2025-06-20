@@ -43,13 +43,6 @@ public String addFuStart(Model model){
         return "addFurniture";
 }
 
-@GetMapping("/updateFu")
-    public String updateFu(@RequestParam("id")Long id, Model model){
-        Furniture furniture = furnitureService.getFurnitureById(id);
-        model.addAttribute("furniture", furniture);
-        model.addAttribute("cartItems", cartItemService.getAllCartItems());
-        return "addFurniture";
-}
 
 @PostMapping("/addFu")
 public String addFu(@Valid @ModelAttribute("furniture") Furniture furniture, BindingResult bindingResult, Model model){
@@ -62,17 +55,22 @@ public String addFu(@Valid @ModelAttribute("furniture") Furniture furniture, Bin
             }else {
                 furnitureService.createFurniture(furniture);
             }
-            return "redirect:furnitureList";
+            return "redirect:list";
         }
 }
+    @GetMapping("/updateFu")
+    public String updateFu(@RequestParam("id")Long id, Model model){
+        Furniture furniture = furnitureService.getFurnitureById(id);
+        model.addAttribute("furniture", furniture);
+        model.addAttribute("cartItems", cartItemService.getAllCartItems());
+        return "addFurniture";
+    }
 
 @GetMapping("/delete")
     public String delete(@RequestParam("id")Long id){
         furnitureService.delete(furnitureService.getFurnitureById(id));
-        return "redirect:furnitureList";
+        return "redirect:list";
 }
-
-
 
 
 }

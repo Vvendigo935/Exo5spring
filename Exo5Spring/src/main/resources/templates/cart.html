@@ -10,6 +10,13 @@
 <h1>Your cart</h1>
 
 
+<ul>
+    <li th:each="cartItem : ${cartItems}">
+        <span th:text="${cartItem.getId()} + ' - ' + ${cartItem.getName()} + ' - ' + ${cartItem.getStock()}"></span>
+        <a th:href="@{/delete(id=${cartItem.getId()})}">Delete item from cart</a>
+
+    </li>
+</ul>
 
 
 

@@ -10,7 +10,31 @@
 
 
 
-
+<h1>Add/Edit a new furniture</h1>
+<form th:action="@{/addFu}" th:object="${furniture}" method="post">
+    <input th:field="*{id}" type="hidden">
+    <div>
+        <label for="name">Name : </label>
+        <input th:field="*{name}" type="text" id="name">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+    <div>
+        <label for="description">description :</label>
+        <input th:field="*{description}" type="text" id="description">
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    </div>
+    <div>
+        <label for="price">price :</label>
+        <input th:field="*{price}" type="number" id="price">
+        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+    </div>
+    <div>
+        <label for="stock">Quantity stock :</label>
+        <input th:field="*{stock}" type="number" id="stock">
+        <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}"></span>
+    </div>
+    <button type="submit">ADD / UPDATE</button>
+</form>
 
 
 </body>
